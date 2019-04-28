@@ -1,0 +1,28 @@
+[
+  {
+    "type": "EnsureDir",
+    "name": "make.default.dir",
+    "spec": {
+      "path": "/etc/default",
+      "user": "root",
+      "group": "root",
+      "mode": "0644"
+    }
+  },
+  {
+    "type": "EnsureFile",
+    "name": "make.default.jboss",
+    "spec": {
+      "path": "/etc/default/jboss-eap.conf",
+      "user": "root",
+      "group": "root",
+      "mode": "0644",
+      "contents": {
+        "path": "jboss.sh"
+      }
+    },
+    "deps": [
+      "make.default.dir"
+    ]
+  }
+]
